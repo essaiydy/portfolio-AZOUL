@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  font-family: "Kanit", sans-serif;
+}
+
+body {
+  background-color: #b43954;
+  height: 100vh;
+}
+
+form {
+  width: 80%;
+  margin: 0% auto;
+  padding: 5%;
+  height: 90%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
+.left {
+  /* border: 2px solid white; */
+  width: 80%;
+  height: auto;
+  /* display: grid; */
+  /* grid-template-columns: repeat(1, 1fr); */
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  /* justify-items: center; */
+  /* justify-content: center; */
+  padding-top: 30px;
+  align-items: center;
+}
+
+.azl {
+  display: inline;
+  width: 50%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid white; */
+  align-items: center;
+  /* justify-content: center; */
+}
+
+#img {
+  display: none;
+}
+
+#save {
+  background-color: #b43954;
+  font-weight: 600;
+  color: white;
+  border: 2px solid white;
+  border-radius: 7px;
+}
+
+.pic {
+  height: 200px;
+  width: 100%;
+  min-width: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  border: 2px solid white;
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+input,
+select {
+  width: 97%;
+  display: block;
+  height: 2.5em;
+  /* width: 100%; */
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 7px;
+}
+
+label {
+  display: block;
+  height: 40px;
+  border: 2px solid white;
+  margin: 7px 0;
+  text-align: center;
+  justify-self: center;
+  padding: 7px 4px 0 4px;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+i {
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}

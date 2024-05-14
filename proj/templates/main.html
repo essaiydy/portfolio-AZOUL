@@ -1,0 +1,51 @@
+{% extends 'layaout.html' %} {% block style %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename ='css/form.css') }}"
+/>
+<script src="{{ url_for('static', filename='js/cheek.js') }}"></script>
+{% endblock style %} {% block body_main %}
+<form method="POST" action="/">
+  <div class="pic"></div>
+  <div class="email">
+    <label>Email</label>
+    <input id="email" type="email" placeholder="Email" name="email" required />
+  </div>
+  <div class="pass">
+    <label>Password</label>
+    <input
+      id="password"
+      type="password"
+      placeholder="Password"
+      name="pass"
+      required
+      minlength="8"
+    />
+  </div>
+  <input type="submit" value="Login" class="subm" />
+  <div class="or">
+    <hr />
+    <h3>OR</h3>
+    <hr />
+  </div>
+  <div class="links">
+    <a href="signup">Create an account</a>
+  </div>
+  <footer>
+    <div class="copy">AZOUL</div>
+  </footer>
+</form>
+<div class="right">
+  <div class="header">
+    <h1 class="toph1">Azoul</h1>
+  </div>
+  <p class="intro">
+    Discover Love, Meet Your Soulmate,
+    <br />Plan Your Dream Wedding – All in One Place!
+  </p>
+  <footer class="fot-right"></footer>
+</div>
+<script>
+  Cheek("{{ email }}", "{{ password }}");
+</script>
+{% endblock body_main %}

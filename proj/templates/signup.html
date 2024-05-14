@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>No</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='css/singin.css') }}"
+    />
+
+    <script src="{{ url_for('static', filename='js/cheek.js') }}"></script>
+  </head>
+  <body>
+    <form method="POST" action="/signup" enctype="multipart/form-data">
+      <div class="pic">
+        <input id="img" type="file" accept="image/*" name="file" />
+        <label for="img">Upload an image</label>
+      </div>
+      <div class="input">
+        <input
+          type="text"
+          placeholder="User Name"
+          name="uname"
+          required
+          minlength="3"
+        />
+        <input
+          id="email"
+          type="email"
+          placeholder="Email"
+          name="email"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="pass"
+          required
+          minlength="8"
+          maxlength="20"
+        />
+        <select id="job" name="job">
+          <option value="none">Select your job</option>
+          {% for job in jobs %}
+          <option value="{{ job }}">{{ job }}</option>
+          {% endfor %}
+        </select>
+        <select id="education-level" name="level">
+          <option value="none">Select Education Level</option>
+          {% for level in levels %}
+          <option value="{{ level }}">{{ level }}</option>
+          {% endfor %}
+        </select>
+        <select
+          id="country"
+          placeholder="Enter your country"
+          name="country"
+          required
+        >
+          {% for country in list %}
+          <option value="{{ country }}">{{ country }}</option>
+          {% endfor %}
+        </select>
+        <input type="text" placeholder="Enter your age" name="age" required />
+        <select
+          id="situation"
+          name="situ"
+          placeholder="What is your situation"
+          name="situ"
+          required
+        >
+          {% for situation in situations %}
+          <option value="{{ situation }}">{{ situation }}</option>
+          {% endfor %}
+        </select>
+        <input
+          type="number"
+          placeholder="Choose your height in cm"
+          name="h"
+          min="140"
+          max="210"
+          required
+        />
+        <input
+          type="number"
+          placeholder="Choose your weight in Kg"
+          name="w"
+          required
+          min="30"
+        />
+        <select id="diseas" name="dis" required>
+          <option value="none">Select Disease</option>
+          {% for dis in diseases %}
+          <option value="{{ dis }}">{{ dis }}</option>
+          {% endfor %}
+        </select>
+        <select id="gender" name="gender" required>
+          <option value="none">Select your gender</option>
+          {% for gender in ['Male', 'Famale'] %}
+          <option value="{{ gender }}">{{ gender }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <input
+        id="go"
+        type="submit"
+        value="Create my account"
+        class="subm"
+        href="/"
+      />
+      <div class="or">
+        <hr />
+        <h3>OR</h3>
+        <hr />
+      </div>
+      <div class="links">
+        <a href="/">login</a>
+      </div>
+    </form>
+    <div class="right">
+      <div class="header">
+        <h1 class="toph1">Azoul</h1>
+      </div>
+      <p class="intro">
+        Discover Love, Meet Your Soulmate, Plan Your Dream Wedding – All in One
+        Place!
+      </p>
+      <!-- <img src="pictures/pet.webp"> -->
+      <!-- <video autoplay muted loop class="vd">
+        <source src="pictures/cat.mp4" type="video/mp4">
+      </video> -->
+      <footer class="fot-right"></footer>
+    </div>
+    <script>
+      Cheek("{{ email }}", " ", "{{ msg }}");
+    </script>
+  </body>
+</html>

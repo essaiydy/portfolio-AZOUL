@@ -1,0 +1,35 @@
+{% extends "layaout.html" %} {% block style %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename ='css/user.css') }}"
+/>
+{% endblock style %} {% block user %}
+<div class="grid">
+  <div class="left">
+    <div
+      class="prof"
+      style="background-image: url({{ path }}{{ info.img }});"
+    ></div>
+    <div class="msg">
+      {% if msg %}
+        <a href="#">
+          <i class="fa-regular fa-comment" style="font-size: 32px"></i
+        ></a>
+      {% else %}
+          <a id='edit' href="/{{ info.id }}/settings"
+        ><i class="fa-solid fa-sliders"></i> Edit profile</a>
+    {% endif %}
+    &nbsp;&nbsp;&nbsp;&nbsp;<a class='azl' href='/users/{{ name | replace(' ', ".") }}/{{ id }}'>
+      <i class='fas fa-home' style="font-size: 30px"></i>
+      </a>
+    </div>
+  </div>
+  <div class="right">
+    <div class="info">
+      {% for inf in info %} {% if inf not in ['psw', 'email', 'id', 'img'] %}
+      <p>{{ inf | capitalize }}:&nbsp;&nbsp;<strong>{{ info[inf] }}</strong></p>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock user %}

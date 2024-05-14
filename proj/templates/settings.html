@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>No</title>
+    <script src="https://kit.fontawesome.com/34675fe8e1.js" crossorigin="anonymous"></script>
+    <!--<link
+      rel="stylesheet"
+      href="{{ url_for('static', filename ='css/settings.css') }}"
+    />-->
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename ='css/settings2.css') }}"
+  />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static', filename='js/cheek.js') }}"></script>
+  </head>
+  <body>
+    <form method="POST" action="/signup" enctype="multipart/form-data">
+      <div class='left'>
+        <div class="pic" style="background-image: url({{ path }}{{ info.img }})">
+          <input id="img" type="file" accept="image/*" name="file" />
+        </div>
+        <label id='forimg' for="img">Change picture</label>
+        <div class='save'>
+          <input
+          class="azl"
+          id='save'
+          type="submit"
+          value="Save"
+          href="/settings"
+          />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class='azl' href='/users/{{ info.name | replace(' ', ".") }}/{{ info.id }}'>
+          <i class='fas fa-home' style="font-size: 32px"></i>
+          </a>
+        </div>
+      </div>
+      <div class='right'>
+        <input
+          class='dr'
+            type="text"
+            placeholder="User Name"
+            name="uname"
+            required
+            minlength="3"
+          />
+          <input class='dr' type="text" placeholder="Enter your age" name="age" required />
+          <select class='dr' id="job" name="job">
+            <option value="none">Select your job</option>
+            {% for job in all_inf.job %}
+            <option value="{{ job }}">{{ job }}</option>
+            {% endfor %}
+          </select>
+          <select class='dr' id="education-level" name="level">
+            <option value="none">Select Education Level</option>
+            {% for level in all_inf.level %}
+            <option value="{{ level }}">{{ level }}</option>
+            {% endfor %}
+          </select>
+          <select
+          class='dr'
+            id="country"
+            placeholder="Enter your country"
+            name="country"
+            required
+          >
+            {% for country in all_inf.country %}
+            <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+          </select>
+            <select
+          class='gauche sing'
+            id="situation"
+            name="situ"
+            placeholder="What is your situation"
+            name="situ"
+            required
+          >
+            {% for situation in all_inf.situation %}
+            <option value="{{ situation }}">{{ situation }}</option>
+            {% endfor %}
+          </select>
+          <input
+          class='gauche'
+            type="number"
+            placeholder="Choose your height in cm"
+            name="h"
+            min="140"
+            max="210"
+            required
+          />
+          <input
+          class='gauche'
+            type="number"
+            placeholder="Choose your weight in Kg"
+            name="w"
+            required
+            min="30"
+          />
+          <select class='gauche' id="diseas" name="dis" required>
+            <option value="none">Select Disease</option>
+            {% for dis in all_inf.disease %}
+            <option value="{{ dis }}">{{ dis }}</option>
+            {% endfor %}
+          </select>
+          <select class='gauche' id="gender" name="gender" required>
+            <option value="none">Select your gender</option>
+            {% for gender in ['Male', 'Famale'] %}
+            <option value="{{ gender }}">{{ gender }}</option>
+            {% endfor %}
+          </select>
+      </div>
+      <!--</div>-->
+      
+    </form>
+   <!--<div class="subm">
+    <a class='azl' href='/users/{{ info.name | replace(' ', ".") }}/{{ info.id }}'>HOME</a>
+    <input
+    id="go"
+    type="submit"
+    value="Save changes"
+    href="/settings"
+    />
+   </div>-->
+  </body>
+</html>

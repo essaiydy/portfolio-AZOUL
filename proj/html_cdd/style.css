@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+}
+
+.grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+  background: #ae7272;
+}
+
+section {
+  background: #7f7575;
+}
+header {
+  grid-column: 1 / 10;
+}
+
+.sec1 {
+  grid-column: 1 / 4;
+  grid-row: 2 / 5;
+  align-self: center;
+  justify-self: center;
+}
