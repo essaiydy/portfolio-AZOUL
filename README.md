@@ -20,5 +20,3 @@
 
 # send a message from here 
 ![preview img](https://media.discordapp.net/attachments/1138612002881806466/1240327091153539082/Capture.PNG?ex=6646281e&is=6644d69e&hm=7cd38897300450883d769a04766f5d2695ce798d45dac2b016f64059b403ac27&=&format=webp&quality=lossless&width=1326&height=670)
-
-
